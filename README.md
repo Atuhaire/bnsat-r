@@ -295,7 +295,7 @@ Our work is intended as an open-source research contribution to the broader Bitc
 
 ## Contact
 
-For research collaboration, technical feedback or other enquiries, please contact the BNSAT-R research team through the official UBRO CLASSIFIEDS LIMITED communication channels.
+For research collaboration, technical feedback or other enquiries, please contact the BNSAT-R research team through the official UBRO CLASSIFIEDS LIMITED communication channels. ubroclassifieds@gmail.com | alex.atuhaire@yahoo.com | alex.atuhaire1@gmail.com | Call/WhatsApp Number: +256773137674
 
 ---
 
