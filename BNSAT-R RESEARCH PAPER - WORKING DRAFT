@@ -1,0 +1,833 @@
+# Bitcoin Node Operational Resilience Under Infrastructure Constraints
+
+## A Systematic Literature Review, Technology Landscape and Preliminary Research Gap Analysis
+
+### BNSAT-R - Bitcoin Node Security & Resilience Research
+
+**Lead Organisation:** UBRO CLASSIFIEDS LIMITED
+**Location:** Uganda
+**Research Programme:** BNSAT-R
+**Proposed Research Project:** BNRB - Bitcoin Node Resilience Benchmark
+**Version:** 0.1 - Working Research Draft
+**Date:** July 2026
+
+---
+
+# Abstract
+
+Bitcoin's security model depends on the ability of independently operated full nodes to validate blocks and transactions according to the network's consensus rules. Bitcoin Core's full-validation model allows users to independently verify the blockchain rather than relying solely on third parties for the correctness of received data.
+
+The security of a decentralised network, however, is not determined exclusively by protocol correctness. The practical operation of the infrastructure that implements and supports the network also matters.
+
+Bitcoin full nodes operate across a diverse range of environments, including dedicated servers, cloud infrastructure, personal computers, single-board computers and resource-constrained deployments. These environments are exposed to operational conditions such as power interruptions, network outages, intermittent connectivity, storage pressure, hardware limitations and software failures.
+
+This paper presents an initial systematic review and technology landscape analysis undertaken as part of the BNSAT-R research programme of UBRO CLASSIFIEDS LIMITED in Uganda.
+
+The objective is not to claim that Bitcoin resilience is an unexplored field. Recent research has examined Bitcoin's resilience to physical Internet infrastructure disruptions, while other work has investigated resource consumption and operational characteristics during initial block download. Existing projects such as myNode, RaspiBlitz and Umbrel also provide node management, monitoring and deployment capabilities.
+
+Instead, this review investigates whether there remains a research opportunity at the intersection of:
+
+1. Individual full-node operational resilience;
+2. Controlled infrastructure disruptions;
+3. Resource-constrained environments;
+4. Reproducible resilience measurement;
+5. Recovery and synchronisation behaviour.
+
+The preliminary findings suggest that the broad concept of Bitcoin network resilience is already being studied, and several practical node-management solutions already exist. Consequently, a new project should not simply duplicate node-management or monitoring functionality.
+
+A potentially valuable research direction may instead be the development and validation of a reproducible experimental methodology for measuring the operational resilience and recovery behaviour of individual Bitcoin full-node deployments under controlled disruptions.
+
+This paper therefore recommends that UBRO proceed to a structured research-validation and pilot-design phase before committing to development of a new software platform.
+
+---
+
+# 1. Introduction
+
+Bitcoin is a decentralised monetary network whose security depends on participants independently verifying transactions and blocks according to a common set of consensus rules.
+
+Bitcoin Core performs full validation of received blocks and transactions, enabling users to independently verify the validity of the blockchain rather than trusting miners or third-party information providers. This independent validation is a central component of Bitcoin's security model.
+
+The practical security of a decentralised system, however, also depends on the infrastructure through which participants operate.
+
+A full node may depend on:
+
+* Computing hardware;
+* Persistent storage;
+* Electricity;
+* Internet connectivity;
+* Network bandwidth;
+* Operating-system stability;
+* Software integrity;
+* Data integrity;
+* Backup and recovery procedures;
+* Human administration.
+
+A failure affecting any of these components may affect the ability of a node to remain available, synchronised or operational.
+
+This does not necessarily imply a failure of Bitcoin's consensus mechanism.
+
+Rather, it raises a separate operational question:
+
+> **How resilient are individual Bitcoin full-node deployments when exposed to controlled infrastructure disruptions and resource constraints?**
+
+This question forms the initial focus of the BNSAT-R research programme.
+
+---
+
+# 2. Background
+
+## 2.1 Bitcoin Full Nodes
+
+A Bitcoin full node independently validates blockchain data according to Bitcoin's consensus rules.
+
+Bitcoin Core's validation architecture is designed to allow users to verify received blocks and transactions without relying solely on external parties.
+
+The security benefit of running a full node is therefore primarily associated with independent verification and reduced reliance on third-party information providers.
+
+This research does not question the correctness of Bitcoin's consensus model.
+
+Instead, it examines the operational conditions under which individual full nodes remain functional and capable of performing their intended role.
+
+---
+
+## 2.2 Operational Resilience
+
+For the purposes of this research, operational resilience refers to the ability of a Bitcoin full-node deployment to:
+
+1. Continue operating during a disruption;
+2. Recover following a disruption;
+3. Return to an operational state;
+4. Re-establish synchronisation where necessary;
+5. Maintain data integrity;
+6. Minimise manual intervention.
+
+This definition is provisional and will be refined during the research programme.
+
+Operational resilience is therefore distinct from:
+
+* Consensus security;
+* Cryptographic security;
+* Protocol security;
+* Network-wide decentralisation.
+
+The BNSAT-R programme focuses primarily on the operational layer.
+
+---
+
+# 3. Research Problem
+
+Bitcoin resilience has traditionally been discussed at several different levels.
+
+These include:
+
+### Protocol Level
+
+Can the consensus rules remain secure?
+
+### Cryptographic Level
+
+Can the cryptographic primitives remain secure?
+
+### Network Level
+
+Can the peer-to-peer network continue functioning under disruption?
+
+### Infrastructure Level
+
+Can the underlying Internet and physical infrastructure support the network?
+
+### Node Operational Level
+
+Can individual full nodes continue operating and recover following local disruptions?
+
+Existing research increasingly addresses several of these layers.
+
+The research question for BNSAT-R is therefore narrower.
+
+> **Is there a sufficiently important and underexplored research opportunity in systematically measuring the operational resilience and recovery behaviour of individual Bitcoin full-node deployments under controlled infrastructure disruptions and resource constraints?**
+
+---
+
+# 4. Research Objectives
+
+The research has six primary objectives.
+
+## Objective 1
+
+Review existing academic research concerning Bitcoin resilience and related distributed-system resilience.
+
+## Objective 2
+
+Review existing Bitcoin node deployment, management and monitoring projects.
+
+## Objective 3
+
+Identify existing methodologies for measuring resilience and recovery.
+
+## Objective 4
+
+Determine whether a meaningful research gap exists.
+
+## Objective 5
+
+Develop a reproducible experimental methodology if a gap is validated.
+
+## Objective 6
+
+Determine whether UBRO should:
+
+* Build new software;
+* Extend an existing project;
+* Contribute to an existing project;
+* Collaborate with established researchers;
+* Or pursue an alternative research direction.
+
+---
+
+# 5. Research Methodology
+
+The BNSAT-R Discovery Phase will use a combination of:
+
+* Systematic literature review;
+* Technical documentation review;
+* Open-source project analysis;
+* Comparative technology mapping;
+* Research-gap analysis;
+* Expert technical feedback.
+
+The research will examine both academic and practical sources.
+
+---
+
+# 6. Literature Review
+
+## 6.1 Bitcoin Infrastructure Resilience
+
+Recent research has examined Bitcoin's resilience to disruptions in the physical Internet infrastructure.
+
+A 2026 study titled *Bitcoin Under Stress: Measuring Infrastructure Resilience 2014–2025* investigated Bitcoin's resilience using eleven years of peer-to-peer network data, submarine-cable infrastructure and documented cable failures. The study examined the interaction between Bitcoin's overlay network and physical infrastructure, including the role of Tor.
+
+This work demonstrates that Bitcoin infrastructure resilience is already an active area of research.
+
+It also highlights an important distinction for BNSAT-R.
+
+The 2026 study focuses primarily on **network-level and physical infrastructure resilience**.
+
+BNSAT-R proposes to investigate a narrower operational layer:
+
+> **What happens to individual full-node deployments when specific local infrastructure conditions fail or become constrained?**
+
+This distinction requires further validation and should not be treated as proof of novelty.
+
+---
+
+## 6.2 Bitcoin Node Resource Behaviour
+
+A 2026 technical paper documenting Bitcoin Core installation and operation on Linux examined resource behaviour during initial block download and investigated parameters including:
+
+* `txindex`;
+* `prune`;
+* `dbcache`;
+* `maxmempool`;
+* `maxconnections`.
+
+The work also documented system-resource behaviour during the initial block download mechanism.
+
+This research is directly relevant to BNSAT-R because it demonstrates that Bitcoin node performance and resource requirements are already being empirically studied.
+
+Therefore, BNSAT-R should not simply repeat resource benchmarking.
+
+Instead, a potential research opportunity may lie in connecting resource constraints with **failure, recovery and resilience outcomes**.
+
+For example:
+
+> Does limited storage, memory, CPU or bandwidth merely reduce performance, or does it materially change the probability and duration of recovery following disruption?
+
+This question requires further investigation.
+
+---
+
+# 7. Existing Technology Landscape
+
+## 7.1 myNode
+
+myNode is designed to make running a Bitcoin and Lightning node easier and more accessible.
+
+Its project documentation describes goals including:
+
+* Ease of operation;
+* Uptime;
+* Reliability;
+* Management;
+* Support.
+
+myNode therefore demonstrates that operational reliability and node management are already recognised practical concerns.
+
+This reduces the justification for creating another general-purpose node-management platform.
+
+A BNSAT-R research project should instead investigate whether existing platforms provide sufficient tools for **standardised resilience experimentation and measurement**.
+
+---
+
+## 7.2 RaspiBlitz
+
+RaspiBlitz provides a DIY Bitcoin full-node and Lightning environment, including monitoring and management capabilities.
+
+Its documentation describes the project as an educational and decentralised approach to operating a node, with additional services accessible through its WebUI.
+
+RaspiBlitz demonstrates that node deployment and monitoring can be performed in relatively accessible hardware environments.
+
+This may be relevant to BNSAT-R research into resource-constrained deployments.
+
+However, the existence of RaspiBlitz also reinforces the need to distinguish between:
+
+* Deploying a node;
+* Managing a node;
+* Monitoring a node;
+* Experimentally measuring node resilience.
+
+These are not necessarily the same research problem.
+
+---
+
+## 7.3 Umbrel
+
+Umbrel provides an accessible environment for operating Bitcoin nodes and related applications.
+
+Its Bitcoin application supports Bitcoin Core and provides configuration options relating to:
+
+* Bitcoin Core versions;
+* Network connectivity;
+* Tor;
+* I2P;
+* Upload limits;
+* Mempool size;
+* Performance.
+
+Umbrel therefore provides significant operational controls.
+
+The existence of these capabilities means that BNSAT-R should carefully assess whether any proposed monitoring or management functionality would duplicate existing work.
+
+---
+
+# 8. Preliminary Technology Gap
+
+Based on the initial review, the broad categories below appear to be relatively well served.
+
+| Area                                | Existing Work          | Preliminary Assessment |
+| ----------------------------------- | ---------------------- | ---------------------- |
+| Full-node validation                | Bitcoin Core           | Mature                 |
+| Node deployment                     | Multiple projects      | Mature                 |
+| Node management                     | Multiple projects      | Mature                 |
+| Node monitoring                     | Multiple projects      | Mature                 |
+| Resource measurement                | Existing research      | Active                 |
+| Network-level resilience            | Emerging research      | Active                 |
+| Physical infrastructure resilience  | Recent research        | Active                 |
+| Individual node recovery            | Requires deeper review | Potential gap          |
+| Standardised resilience experiments | Requires deeper review | Potential gap          |
+| Controlled disruption benchmarking  | Requires deeper review | Potential gap          |
+| Recovery measurement                | Requires deeper review | Potential gap          |
+| Resource constraints vs recovery    | Requires deeper review | Potential gap          |
+
+These findings are preliminary.
+
+The research gap cannot be confirmed until a broader literature and technology review is completed.
+
+---
+
+# 9. Potential Research Gap
+
+The preliminary research suggests a possible research opportunity at the intersection of four areas:
+
+```text
+Individual Bitcoin Full Node
+          +
+Controlled Disruption
+          +
+Resource Constraints
+          +
+Recovery Measurement
+          =
+Potential Research Opportunity
+```
+
+The proposed research would investigate questions such as:
+
+### Question 1
+
+How does a Bitcoin full node behave following an unexpected power interruption?
+
+### Question 2
+
+How does intermittent connectivity affect recovery?
+
+### Question 3
+
+How does storage pressure affect recovery and synchronisation?
+
+### Question 4
+
+How do CPU and memory constraints affect recovery?
+
+### Question 5
+
+How much human intervention is required?
+
+### Question 6
+
+Can recovery behaviour be measured consistently?
+
+### Question 7
+
+Can different node environments be compared using common metrics?
+
+---
+
+# 10. Proposed Research Framework
+
+If the research gap is validated, BNRB could investigate a framework based on controlled experiments.
+
+A simplified model is:
+
+```text
+NORMAL OPERATION
+       │
+       ▼
+CONTROLLED DISRUPTION
+       │
+       ├── Power
+       ├── Network
+       ├── Storage
+       ├── Hardware
+       └── Resource
+       │
+       ▼
+RECOVERY
+       │
+       ├── Automatic
+       ├── Partial
+       └── Manual
+       │
+       ▼
+MEASUREMENT
+       │
+       ├── Recovery Time
+       ├── Availability
+       ├── Synchronisation
+       ├── Data Integrity
+       ├── Resource Usage
+       └── Human Intervention
+```
+
+---
+
+# 11. Candidate Resilience Metrics
+
+The following metrics are proposed for investigation.
+
+## Recovery Time
+
+Time from disruption to restoration of normal operation.
+
+## Recovery Success
+
+Whether the node successfully returns to its expected operational state.
+
+## Synchronisation Recovery
+
+Time required for the node to return to the expected chain state.
+
+## Availability
+
+Percentage of time the node is operational during the experiment.
+
+## Data Integrity
+
+Whether blockchain data remains valid and consistent following disruption.
+
+## Resource Consumption
+
+CPU, memory, storage and bandwidth utilisation.
+
+## Human Intervention
+
+The degree of manual intervention required.
+
+## Recovery Complexity
+
+The number and complexity of steps required to restore operation.
+
+These metrics are preliminary.
+
+The research must determine whether they are meaningful, measurable and comparable.
+
+---
+
+# 12. Uganda Research Context
+
+UBRO CLASSIFIEDS LIMITED is conducting this research from Uganda.
+
+The research may provide an opportunity to investigate operational conditions relevant to environments where infrastructure constraints may be more pronounced.
+
+Potential variables include:
+
+* Electricity interruptions;
+* Internet interruptions;
+* Intermittent connectivity;
+* Bandwidth limitations;
+* Hardware availability;
+* Hardware affordability;
+* Technical support.
+
+However, the research will not assume that Uganda is inherently less resilient than other environments.
+
+The correct research approach is to measure conditions empirically.
+
+The initial laboratory should therefore be located in Kampala, with future experiments potentially extending to additional Ugandan locations if the research methodology supports this.
+
+Potential future research environments may include:
+
+* Kampala;
+* Jinja;
+* Mbarara;
+* Mbale.
+
+These locations should be considered research sites only after the initial laboratory methodology has been validated.
+
+---
+
+# 13. Proposed Experimental Design
+
+The proposed pilot would operate in a controlled laboratory environment.
+
+A possible experimental architecture is:
+
+```text
+                 TEST NETWORK
+                      │
+          ┌───────────┼───────────┐
+          │           │           │
+          ▼           ▼           ▼
+       NODE A      NODE B      NODE C
+       Baseline   Constrained   Variable
+          │           │           │
+          └───────────┼───────────┘
+                      │
+                      ▼
+                 MONITORING
+                      │
+                      ▼
+               DATA COLLECTION
+                      │
+                      ▼
+                  ANALYSIS
+```
+
+The experiments would compare baseline and constrained environments.
+
+Potential scenarios include:
+
+### Scenario A
+
+Normal operation.
+
+### Scenario B
+
+Graceful shutdown and restart.
+
+### Scenario C
+
+Unexpected shutdown.
+
+### Scenario D
+
+Short network interruption.
+
+### Scenario E
+
+Extended network interruption.
+
+### Scenario F
+
+Intermittent connectivity.
+
+### Scenario G
+
+Storage pressure.
+
+### Scenario H
+
+CPU or memory pressure.
+
+Each experiment would be conducted repeatedly where appropriate.
+
+The goal would be to determine whether observed behaviour is reproducible.
+
+---
+
+# 14. Research Integrity
+
+The project will follow these principles:
+
+### Reproducibility
+
+Experiments should be documented sufficiently for independent replication.
+
+### Transparency
+
+Negative results should be reported.
+
+### Evidence-Based Conclusions
+
+Claims should be supported by experimental evidence.
+
+### Controlled Testing
+
+Experiments should be conducted only on authorised systems.
+
+### Responsible Disclosure
+
+Potential vulnerabilities should be handled responsibly.
+
+### Open Research
+
+Where appropriate, methodologies and non-sensitive results should be publicly available.
+
+---
+
+# 15. Preliminary Findings
+
+The initial review leads to five preliminary findings.
+
+## Finding 1
+
+Bitcoin resilience is not an unexplored research field.
+
+Network-level and physical infrastructure resilience are already being investigated.
+
+## Finding 2
+
+Bitcoin node resource behaviour is also an active research area.
+
+Therefore, BNSAT-R must avoid simply reproducing existing performance benchmarks.
+
+## Finding 3
+
+Multiple mature projects already address node deployment, management and monitoring.
+
+Therefore, building another general-purpose node management platform would likely be poorly differentiated.
+
+## Finding 4
+
+There may be a narrower opportunity around the systematic measurement of individual node recovery behaviour under controlled disruptions.
+
+This requires significantly more research before being considered a validated gap.
+
+## Finding 5
+
+The strongest potential contribution may be methodological rather than purely software-based.
+
+UBRO may be able to contribute:
+
+* Experimental methodology;
+* Benchmarking;
+* Reproducible test protocols;
+* Open-source measurement tools;
+* Research datasets;
+* Technical documentation.
+
+---
+
+# 16. Preliminary Research Gap Statement
+
+Based on the initial review, BNSAT-R proposes the following preliminary research-gap hypothesis:
+
+> **While Bitcoin network resilience, infrastructure resilience, node deployment and node resource behaviour have each received significant attention, there may be an opportunity to develop a reproducible experimental methodology for measuring the operational resilience and recovery behaviour of individual Bitcoin full-node deployments under controlled infrastructure disruptions and resource constraints.**
+
+This statement is intentionally cautious.
+
+It is a hypothesis requiring further validation.
+
+The research should not claim that this gap is definitively novel until a more comprehensive systematic review and expert review have been completed.
+
+---
+
+# 17. Recommended Next Research Phase
+
+The next phase should consist of:
+
+## Phase 1
+
+Expand the literature review.
+
+## Phase 2
+
+Review Bitcoin Core testing and fuzzing infrastructure.
+
+## Phase 3
+
+Review additional node-management and monitoring projects.
+
+## Phase 4
+
+Review existing distributed-systems resilience benchmarks.
+
+## Phase 5
+
+Conduct expert technical interviews.
+
+## Phase 6
+
+Develop the BNRB experimental methodology.
+
+## Phase 7
+
+Conduct a small laboratory pilot.
+
+## Phase 8
+
+Publish the results.
+
+---
+
+# 18. Recommended Decision Framework
+
+At the conclusion of the Discovery Phase, UBRO should select one of four paths.
+
+### BUILD
+
+Develop BNRB as an open-source research and benchmarking project.
+
+### EXTEND
+
+Contribute resilience-testing functionality to an existing Bitcoin project.
+
+### COLLABORATE
+
+Partner with established Bitcoin researchers or developers.
+
+### PIVOT
+
+Pursue another Bitcoin security research question.
+
+---
+
+# 19. Potential Contribution to the Bitcoin Ecosystem
+
+If validated, BNSAT-R could potentially contribute:
+
+### Research
+
+Evidence concerning node operational resilience.
+
+### Methodology
+
+Reproducible resilience-testing protocols.
+
+### Software
+
+Open-source experimental and measurement tools.
+
+### Data
+
+Non-sensitive research datasets.
+
+### Documentation
+
+Guidance for researchers and node operators.
+
+### Capacity Building
+
+Bitcoin security research and technical training in Uganda.
+
+---
+
+# 20. Limitations
+
+This preliminary review has several limitations.
+
+First, it is not yet a completed systematic literature review.
+
+Second, the existence of potentially similar research cannot be ruled out.
+
+Third, the research has not yet undergone extensive expert review by established Bitcoin Core developers or security researchers.
+
+Fourth, the proposed metrics have not yet been experimentally validated.
+
+Fifth, the relationship between individual node resilience and overall Bitcoin network security requires careful treatment.
+
+A failure of an individual node does not necessarily constitute a security failure of the Bitcoin network.
+
+The proposed research must therefore avoid overstating the security implications of operational resilience.
+
+---
+
+# 21. Conclusion
+
+The initial research undertaken by the BNSAT-R programme indicates that Bitcoin resilience is a broad and active field of research.
+
+Recent work has investigated resilience at the physical infrastructure and network levels.
+
+Existing projects provide substantial capabilities for Bitcoin node deployment, management and monitoring.
+
+Existing research has also examined Bitcoin node resource behaviour.
+
+These findings suggest that UBRO should not attempt to create another general-purpose Bitcoin node management platform.
+
+Instead, a potentially more valuable contribution may lie in investigating the operational resilience of individual Bitcoin full-node deployments through controlled, reproducible experiments.
+
+The central research hypothesis is that a systematic methodology for measuring node recovery behaviour under controlled disruptions and resource constraints may provide useful information that complements existing network-level resilience research and node-management tooling.
+
+This hypothesis requires further validation.
+
+The recommended next step is therefore a structured eight-week research programme combining:
+
+* Systematic literature review;
+* Technology landscape analysis;
+* Existing methodology review;
+* Expert technical feedback;
+* Research-gap validation;
+* Experimental design.
+
+Only after this process should UBRO decide whether to build BNRB, extend an existing project, collaborate with established researchers or pivot to another research question.
+
+The ultimate objective is not to build a new tool for its own sake.
+
+The objective is to identify a meaningful security or resilience problem and contribute evidence, research and open-source work that the broader Bitcoin ecosystem can independently evaluate and use.
+
+---
+
+# References and Initial Sources
+
+1. Bitcoin.org. Bitcoin Core Validation. Bitcoin Core documentation.
+
+2. Brink. Programs. Bitcoin open-source developer funding and grant programme.
+
+3. Brink. "Welcoming conduition." June 2026.
+
+4. myNodeBTC. myNode open-source project and documentation.
+
+5. RaspiBlitz. RaspiBlitz documentation.
+
+6. Umbrel. Bitcoin Node application documentation.
+
+7. Ulloa, J. E., & Llanos, D. R. (2026). *Instalación, configuración y utilización de un nodo Bitcoin en Linux.*
+
+8. Wu, W., & Neumueller, A. (2026). *Bitcoin Under Stress: Measuring Infrastructure Resilience 2014–2025.*
+
+---
+
+## Research Status
+
+**WORKING DRAFT**
+
+This document represents an initial research and gap-analysis draft.
+
+It should not be treated as a final systematic literature review or as proof of research novelty.
+
+The conclusions are subject to revision following:
+
+* Expanded literature review;
+* Additional technical sources;
+* Expert review;
+* Experimental validation.
