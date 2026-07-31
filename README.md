@@ -1,306 +1,111 @@
 # BNSAT-R
 
-## Bitcoin Node Security & Resilience Research
+## Bitcoin Node Security, Availability & Resilience Research
 
-**BNSAT-R** is an open-source research initiative led by **UBRO CLASSIFIEDS LIMITED**, an IT solutions and research organisation based in Uganda.
+BNSAT-R is an independent Bitcoin infrastructure research programme being developed under UBRO CLASSIFIEDS LIMITED in Uganda.
 
-The programme investigates practical questions relating to the security, operational resilience and recoverability of Bitcoin full-node deployments.
+The programme focuses on exploring practical questions related to Bitcoin node security, availability, operational resilience, recovery, and infrastructure continuity.
 
-Our initial research programme is focused on understanding how Bitcoin full nodes behave under controlled infrastructure disruptions and resource constraints.
+Our approach combines:
 
----
-
-## Research Question
-
-Our initial research question is:
-
-> **Can the operational resilience of individual Bitcoin full-node deployments be measured systematically under controlled infrastructure disruptions and resource constraints?**
-
-This is a research question, not a predetermined conclusion.
-
-The purpose of the initial research phase is to determine:
-
-* What research already exists;
-* What tools already exist;
-* What problems have already been solved;
-* What gaps may remain;
-* Whether a meaningful contribution can be made.
-
----
-
-## Initial Research Project
-
-### BNRB
-
-**Bitcoin Node Resilience Benchmark**
-
-BNRB is a proposed research framework for investigating whether the operational resilience of Bitcoin full-node deployments can be measured using reproducible experimental methods.
-
-Potential areas of investigation include:
-
-* Power interruption;
-* Network interruption;
-* Intermittent connectivity;
-* Storage pressure;
-* Hardware limitations;
-* CPU and memory constraints;
-* Software or process failure;
-* Recovery procedures;
-* Operational monitoring.
-
-Potential resilience metrics include:
-
-* Recovery time;
-* Recovery success;
-* Synchronisation recovery;
-* Availability;
-* Data integrity;
-* Resource consumption;
-* Human intervention;
-* Recovery complexity.
-
-The specific metrics and methodology will be refined through research and external technical review.
-
----
+* Independent research
+* Controlled experimentation
+* Reproducible methodologies
+* Technical documentation
+* Data analysis
+* Open-source development
+* Collaboration with Bitcoin developers and researchers
 
 ## Research Philosophy
 
-BNSAT-R follows five principles:
+BNSAT-R follows five core principles:
 
-### 1. Research Before Building
+1. **Research Before Building**
+   Understand existing research, tools, and open-source projects before developing new solutions.
 
-We will first investigate existing research and tools before developing new software.
+2. **Measure Before Claiming**
+   Base conclusions on evidence, measurable results, and reproducible observations.
 
-### 2. Measure Before Claiming
+3. **Collaborate Before Duplicating**
+   Recognise existing work and collaborate wherever possible.
 
-We will rely on evidence and reproducible experiments rather than assumptions.
+4. **Reproducibility**
+   Document research methodologies clearly enough to support independent review and replication.
 
-### 3. Test Before Generalising
+5. **Open Contribution**
+   Share useful findings, documentation, methodologies, and software with the wider ecosystem where appropriate.
 
-We will conduct controlled experiments before drawing broader conclusions.
+## Initial Research Project
 
-### 4. Collaborate Before Duplicating
+### BNOCR
 
-Where an existing project adequately addresses a problem, we will seek opportunities to contribute or collaborate rather than unnecessarily duplicating existing work.
+**Bitcoin Node Operational Continuity Research**
 
-### 5. Publish Before Promoting
+BNOCR is the initial research project under the BNSAT-R programme.
 
-Where appropriate, we intend to make our methodologies, findings and open-source technical work publicly available for independent review.
+The project explores the following research question:
 
----
+> How do independently operated Bitcoin full nodes recover and return to operational continuity following controlled disruptions, and can this recovery process be measured using a reproducible framework?
+
+Potential areas of investigation include:
+
+* Power interruptions
+* Network connectivity
+* Bandwidth limitations
+* Computing resources
+* Storage conditions
+
+Potential research metrics may include:
+
+* Recovery time
+* Process recovery
+* Peer recovery
+* Chain-state recovery
+* Operational recovery
+* Resource utilisation
+* Recovery success
+* Manual intervention
 
 ## Current Status
 
-**Status: Discovery & Research Phase**
+BNSAT-R is currently at the research validation and methodology development stage.
 
-The project is currently investigating:
+Current priorities include:
 
-* Existing academic literature;
-* Bitcoin technical research;
-* Existing node-management and monitoring projects;
-* Distributed-systems resilience methodologies;
-* Potential research gaps;
-* Experimental approaches.
+* Reviewing existing research
+* Reviewing relevant open-source projects
+* Identifying genuine research gaps
+* Consulting experienced Bitcoin developers and researchers
+* Refining the research question
+* Developing a reproducible methodology
+* Establishing an appropriate experimental environment
 
-At this stage, BNSAT-R does **not** claim that the proposed research represents a novel or previously unexplored contribution.
+No conclusions are being claimed at this stage.
 
-The purpose of the Discovery Phase is to determine whether a meaningful research opportunity exists.
+The objective is to conduct careful, evidence-based research that complements existing work within the Bitcoin ecosystem.
 
----
+## Research Location
 
-## Research Questions
+Initial research activities are being developed from Uganda, East Africa.
 
-### RQ1
-
-How resilient are Bitcoin full-node deployments following unexpected infrastructure disruptions?
-
-### RQ2
-
-How does intermittent connectivity affect node recovery and synchronisation?
-
-### RQ3
-
-How do hardware and resource constraints affect operational resilience?
-
-### RQ4
-
-What operational practices improve recovery?
-
-### RQ5
-
-Which metrics provide meaningful measures of node resilience?
-
-### RQ6
-
-Can node resilience be benchmarked using reproducible experimental methods?
-
-### RQ7
-
-What existing tools and methodologies can be extended rather than duplicated?
-
----
-
-## Research Areas
-
-```text
-BNSAT-R
-│
-├── Node Deployment Security
-│
-├── Operational Resilience
-│
-├── Infrastructure Constraints
-│
-├── Resilience Measurement
-│
-├── Recovery & Availability
-│
-└── Open-Source Tooling
-```
-
----
-
-## Proposed Repository Structure
-
-```text
-bnsat-r/
-│
-├── README.md
-├── LICENSE
-├── CONTRIBUTING.md
-├── CODE_OF_CONDUCT.md
-├── SECURITY.md
-│
-├── research/
-│   ├── literature-review/
-│   ├── landscape-analysis/
-│   ├── research-gap/
-│   └── publications/
-│
-├── methodology/
-│   ├── resilience-model/
-│   ├── experimental-design/
-│   └── metrics/
-│
-├── experiments/
-│
-├── data/
-│
-├── analysis/
-│
-├── prototypes/
-│
-└── docs/
-```
-
----
-
-## Responsible Research
-
-All experimental activities will be conducted in controlled environments or on systems for which explicit authorisation has been obtained.
-
-BNSAT-R will not intentionally disrupt public Bitcoin infrastructure.
-
-The project will not conduct unauthorised security testing.
-
-Potential vulnerabilities discovered during research will be handled using appropriate responsible disclosure practices.
-
----
-
-## Open-Source Commitment
-
-Where technically and legally appropriate, BNSAT-R intends to publish:
-
-* Research methodologies;
-* Experimental protocols;
-* Technical documentation;
-* Open-source software;
-* Non-sensitive research data;
-* Research findings.
-
-Our objective is to enable independent review, collaboration and reproducibility.
-
----
-
-## Research from Uganda
-
-BNSAT-R is being developed in Uganda by UBRO CLASSIFIEDS LIMITED.
-
-The research may investigate infrastructure conditions relevant to resource-constrained environments, including:
-
-* Electricity availability;
-* Internet connectivity;
-* Bandwidth;
-* Hardware affordability;
-* Technical support;
-* Infrastructure availability.
-
-We will not assume that these factors create unique security problems.
-
-Instead, we intend to investigate them empirically.
-
-Where appropriate, the research may contribute insights relevant to:
-
-* Uganda;
-* Africa;
-* Emerging markets;
-* Remote environments;
-* Resource-constrained deployments;
-* The broader global decentralised infrastructure ecosystem.
-
----
-
-## About UBRO CLASSIFIEDS LIMITED
-
-UBRO CLASSIFIEDS LIMITED is an Uganda-based IT solutions provider with experience in:
-
-* Information technology;
-* Systems administration;
-* Network infrastructure;
-* Software development;
-* IT operations;
-* Research and training;
-* Technical consultancy.
-
-UBRO is developing its research capability in Bitcoin security and decentralised infrastructure through the BNSAT-R programme.
-
----
+The project aims to contribute to the global Bitcoin ecosystem while helping develop local technical research capacity.
 
 ## Collaboration
 
-We welcome constructive technical feedback and collaboration from:
+We welcome constructive engagement with:
 
-* Bitcoin developers;
-* Security researchers;
-* Distributed-systems researchers;
-* Open-source developers;
-* Academic researchers;
-* Infrastructure engineers.
+* Bitcoin developers
+* Infrastructure researchers
+* Security researchers
+* Node operators
+* Open-source developers
+* Academic researchers
+* Technology organisations
 
-We particularly welcome feedback that helps us identify existing work, avoid duplication and improve the quality of our research methodology.
-
----
-
-## Disclaimer
-
-BNSAT-R is an independent research initiative led by UBRO CLASSIFIEDS LIMITED.
-
-The project is not affiliated with or endorsed by Bitcoin Core, Brink or any other Bitcoin organisation unless explicitly stated.
-
-BNSAT-R does not represent itself as an official Bitcoin security authority.
-
-Our work is intended as an open-source research contribution to the broader Bitcoin and decentralised technology ecosystem.
+If you are working on related research or infrastructure, we welcome opportunities to learn, collaborate, and contribute.
 
 ---
 
-## Contact
+**Research. Measure. Build. Contribute.**
 
-For research collaboration, technical feedback or other enquiries, please contact the BNSAT-R research team through the official UBRO CLASSIFIEDS LIMITED communication channels. ubroclassifieds@gmail.com | alex.atuhaire@yahoo.com | alex.atuhaire1@gmail.com | Call/WhatsApp Number: +256773137674
-
----
-
-**UBRO CLASSIFIEDS LIMITED**
-
-**BNSAT-R — Bitcoin Node Security & Resilience Research**
-
-*Research. Measure. Build. Contribute.*
+**Uganda | Africa | Open Source | Bitcoin Infrastructure**
